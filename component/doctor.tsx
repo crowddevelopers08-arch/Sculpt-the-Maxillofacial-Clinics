@@ -70,7 +70,7 @@ const MeetDrPriyankaRaj = () => {
             {/* First Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
+                src="CLINIC-pic5.jpg"
                 alt="Team Collaboration"
                 className="w-full h-64 md:h-72 object-cover"
               />
