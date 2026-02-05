@@ -170,7 +170,7 @@ const WhoAreWeSection = () => {
                   {expanded ? "Read Less" : "Read More"}
                 </button>
               </div>
-              <div className="flex justify-center lg:justify-center">
+              <div className="flex justify-center lg:justify-start">
                 <button
                   onClick={() => setContactPopupOpen(true)}
                   className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-2.5 px-5 sm:py-3 sm:px-6 md:py-3 md:px-7 text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#bc9c24] focus:ring-offset-2"

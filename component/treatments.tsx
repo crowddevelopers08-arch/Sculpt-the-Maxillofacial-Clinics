@@ -247,7 +247,7 @@ const ServicesWeProvide = () => {
     },
     {
       id: 2,
-      icon: "/treatment/biography.png",
+      icon: "/treatment/medicine.png",
       title: "Bio-Profiling FUE",
       description:
         "Our signature method that optimizes graft selection based on your biological hair profile for maximum density.",
@@ -255,7 +255,7 @@ const ServicesWeProvide = () => {
     },
     {
       id: 3,
-      icon: "/treatment/man.png",
+      icon: "/treatment/renovation.png",
       title: "Beard & Eyebrow Reconstruction ",
       description:
         "Precision transplants to fill patches and define your facial features.",
@@ -263,7 +263,7 @@ const ServicesWeProvide = () => {
     },
     {
       id: 4,
-      icon: "/treatment/reproductive.png",
+      icon: "/treatment/cpr.png",
       title: "GFC & PRP Therapy",
       description:
         "Non-surgical growth factor treatments to strengthen existing hair and accelerate post-op healing.",
