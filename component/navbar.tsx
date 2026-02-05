@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-40 bg-white border-b" style={{ borderColor: colors.light }}>
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-25">
             
             {/* Logo */}
             <div className="cursor-pointer">
