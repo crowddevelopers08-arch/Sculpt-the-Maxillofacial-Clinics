@@ -93,10 +93,10 @@ const BeforeAfterSlider = () => {
 
   return (
     <>
-      <div className="py-6 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-br from-yellow-50 to-yellow-100">
+      <div className="py-6 sm:py-10 md:py-12 lg:py-6 bg-gradient-to-br from-yellow-50 to-yellow-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Heading */}
-          <div className="text-center mb-3 sm:mb-8 md:mb-8">
+          <div className="text-center mb-3 sm:mb-8 md:mb-6">
             <h2
               className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold mb-2 sm:mb-3"
               style={{ color: colors.text }}
@@ -113,10 +113,37 @@ const BeforeAfterSlider = () => {
               We don't believe in artificial looks. Our goal is facial harmony.
               Browse our gallery of real patient outcomes for Hair Transplants.
             </p>
+            
+          <div className="flex justify-center">
+            <div className="w-48 mt-4 flex justify-center gap-1">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-1 w-1 rounded-full"
+                  style={{
+                    backgroundColor: colors.primaryDark,
+                    animation: `wave 1.5s ease-in-out infinite`,
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                />
+              ))}
+            </div>
+            <style jsx>{`
+              @keyframes wave {
+                0%,
+                100% {
+                  transform: translateY(0px);
+                }
+                50% {
+                  transform: translateY(-8px);
+                }
+              }
+            `}</style>
+          </div>
           </div>
 
           {/* Cards Container */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-6">
             {getVisibleTransformations().map((transformation) => (
               <TransformationCard
                 key={transformation.id}
@@ -127,7 +154,7 @@ const BeforeAfterSlider = () => {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="flex justify-center items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="flex justify-center items-center gap-4 sm:gap-6 mb-6 sm:mb-5">
             <button
               onClick={prevSlide}
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"

@@ -285,7 +285,10 @@ const ServicesWeProvide = () => {
         {/* Section Heading */}
         <div className="text-center mb-8 md:mb-13">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 inline-block relative">
-            Tailored Solutions for Every Stage of Hair Loss
+            Tailored Solutions for Every {" "}
+              <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
+              Stage of Hair Loss
+              </span>
           </h2>
           <div className="flex justify-center">
             <div className="w-48 mt-4 flex justify-center gap-1">

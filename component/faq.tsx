@@ -88,7 +88,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
         {/* Section Heading */}
         <div className="text-center mb-4 md:mb-8">
           <h2
-            className="text-2xl md:text-4xl lg:text-4xl font-extrabold mb-3"
+            className="text-2xl md:text-4xl lg:text-4xl font-extrabold mb-1"
             style={{ color: colors.text }}
           >
             Frequently Asked Questions
@@ -99,6 +99,33 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
           >
             Questions Patients Commonly Ask About Hair Transplant
           </p>
+          
+          <div className="flex justify-center">
+            <div className="w-48 mt-4 flex justify-center gap-1">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-1 w-1 rounded-full"
+                  style={{
+                    backgroundColor: colors.primaryDark,
+                    animation: `wave 1.5s ease-in-out infinite`,
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                />
+              ))}
+            </div>
+            <style jsx>{`
+              @keyframes wave {
+                0%,
+                100% {
+                  transform: translateY(0px);
+                }
+                50% {
+                  transform: translateY(-8px);
+                }
+              }
+            `}</style>
+          </div>
         </div>
 
         {/* FAQ Grid - 2 Columns on Desktop, 1 on Mobile */}
@@ -190,16 +217,6 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
 
         {/* Bottom CTA Section */}
         <div className="mt-6 md:mt-8 text-center">
-          <div
-            className="inline-block bg-white rounded-2xl px-8 py-6 shadow-lg border-2"
-            style={{ borderColor: colors.primaryLight }}
-          >
-            <p
-              className="text-lg md:text-xl font-semibold mb-4"
-              style={{ color: colors.text }}
-            >
-              Still have questions?
-            </p>
             <div className="flex justify-center">
               <button
               onClick={() => setContactPopupOpen(true)}
@@ -239,7 +256,6 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
             </div>
           </div>
         </div>
-      </div>
     </div>
     <ContactFormPopup 
   isOpen={contactPopupOpen} 

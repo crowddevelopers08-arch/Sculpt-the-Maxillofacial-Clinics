@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 
 const HealthStats = () => {
@@ -57,6 +58,33 @@ const HealthStats = () => {
           >
             Excellence in hair treatments is our standard, and our numbers back it up. From clients satisfaction rates to successful treatment outcomes.
           </p>
+          
+          <div className="flex justify-center">
+            <div className="w-48 mt-4 flex justify-center gap-1">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-1 w-1 rounded-full"
+                  style={{
+                    backgroundColor: colors.primaryDark,
+                    animation: `wave 1.5s ease-in-out infinite`,
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                />
+              ))}
+            </div>
+            <style jsx>{`
+              @keyframes wave {
+                0%,
+                100% {
+                  transform: translateY(0px);
+                }
+                50% {
+                  transform: translateY(-8px);
+                }
+              }
+            `}</style>
+          </div>
         </div>
 
         {/* Stats Grid - Stack vertically on mobile */}

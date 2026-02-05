@@ -44,11 +44,11 @@ const HairTreatmentServices = () => {
   const [hoveredIndex, setHoveredIndex] = useState <number | null>(null);
 
   return (
-    <div className="w-full py-8 md:py-12 px-4" style={{ backgroundColor: colors.white }}>
+    <div id='TRIKUT' className="w-full py-8 md:py-12 px-4" style={{ backgroundColor: colors.white }}>
       <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 md:mb-13">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 inline-block relative">
-            What Makes  {" "}
+            What Makes {" "}
               <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
                Sculpt Different
               </span>

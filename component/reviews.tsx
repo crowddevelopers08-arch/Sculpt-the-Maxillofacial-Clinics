@@ -119,7 +119,7 @@ const PatientStories = () => {
     <div className="py-6 md:py-10 lg:py-10 bg-gradient-to-br from-yellow-50 to-yellow-100">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Heading */}
-        <div className="text-center mb-4 md:mb-8">
+        <div className="text-center mb-4 md:mb-7">
           <h2
             className="text-2xl md:text-4xl lg:text-4xl font-extrabold mb-3"
             style={{ color: colors.text }}
@@ -175,7 +175,35 @@ const PatientStories = () => {
               </span>
             </div>
           </div>
+                  
+          <div className="flex max-sm:mt-3 mt-6 justify-center">
+            <div className="w-48 mt-0 flex justify-center gap-1">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="h-1 w-1 rounded-full"
+                  style={{
+                    backgroundColor: colors.primaryDark,
+                    animation: `wave 1.5s ease-in-out infinite`,
+                    animationDelay: `${i * 0.1}s`,
+                  }}
+                />
+              ))}
+            </div>
+            <style jsx>{`
+              @keyframes wave {
+                0%,
+                100% {
+                  transform: translateY(0px);
+                }
+                50% {
+                  transform: translateY(-8px);
+                }
+              }
+            `}</style>
+          </div>
         </div>
+
 
         {/* Carousel Container */}
         <div className="relative">
@@ -320,22 +348,6 @@ const PatientStories = () => {
               />
             ))}
           </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="flex justify-center mt-7">
-          <button
-          onClick={() => setContactPopupOpen(true)}
-            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-7 max-sm:px-3 text-sm md:text-lg font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
-          >
-            <div className="relative z-10 flex items-center justify-center gap-3">
-              Get An Expert Advice For Your Hair
-              <ArrowRight size={20} />
-            </div>
-
-            {/* a Shine Effect */}
-            <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-          </button>
         </div>
       </div>
     </div>
