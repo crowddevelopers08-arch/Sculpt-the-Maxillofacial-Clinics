@@ -1,8 +1,11 @@
 "use client";
 
 import { Calendar, Star } from "lucide-react";
+import ContactFormPopup from "./contact-form";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   const colors = {
     primary: "#bc9c24",
     primaryDark: "#8b6c0d",
@@ -22,8 +25,9 @@ const HeroSection = () => {
   ];
 
   return (
+    <>
     <div 
-      className="relative py-10 md:py-16 lg:pt-10 overflow-hidden min-h-[90vh] flex flex-col justify-center"
+      className="relative py-0 md:py-16 lg:pt-10 overflow-hidden min-h-[90vh] flex flex-col justify-center"
       style={{ backgroundColor: colors.cream }}
     >
       <div className="container mx-auto px-4 max-w-7xl">
@@ -51,7 +55,8 @@ const HeroSection = () => {
               {/* Button */}
               <div>
                 <button
-                  className="group relative px-8 py-4 rounded-full font-bold text-white text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3 shadow-lg"
+                onClick={() => setContactPopupOpen(true)}
+                  className="group relative max-sm:px-6 px-8 py-4 rounded-full font-bold text-white text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3 shadow-lg"
                   style={{ 
                     backgroundColor: '#3d3026'
                   }}
@@ -63,7 +68,7 @@ const HeroSection = () => {
               </div>
               
               {/* Stats Content */}
-              <div className="space-y-2">
+              <div className="space-y-2 max-sm:mb-5">
                 <p className="text-lg md:text-xl font-bold" style={{ color: colors.text }}>
                   Bangalore's Premier Maxillofacial & Hair Restoration Clinic
                 </p>
@@ -194,6 +199,11 @@ const HeroSection = () => {
         }
       `}</style>
     </div>
+          <ContactFormPopup 
+        isOpen={contactPopupOpen} 
+        onClose={() => setContactPopupOpen(false)} 
+      />
+      </>
   );
 };
 

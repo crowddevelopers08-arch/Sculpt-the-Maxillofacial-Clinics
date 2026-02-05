@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { Plus, Minus, ArrowRight } from "lucide-react";
+import ContactFormPopup from "./contact-form";
 
 const FrequentlyAskedQuestions = () => {
 const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
 
   // Using the same color scheme from previous components
   const colors = {
@@ -77,6 +79,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
   const displayedFaqs = showAll ? faqs : faqs.slice(0, 5);
 
   return (
+    <>
     <div
       id="faq"
       className="py-4 md:py-20 lg:py-8 bg-gradient-to-br from-yellow-50 to-yellow-100"
@@ -198,8 +201,8 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
               Still have questions?
             </p>
             <div className="flex justify-center">
-              <a
-                href="#"
+              <button
+              onClick={() => setContactPopupOpen(true)}
                 className="
                   group relative
                   bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d]
@@ -232,12 +235,17 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
 
                 {/* Shine Effect */}
                 <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
+    </>
   );
 };
 

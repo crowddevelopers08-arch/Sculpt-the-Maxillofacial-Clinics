@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import ContactFormPopup from "./contact-form";
 
 // Define TypeScript interfaces
 interface Transformation {
@@ -27,6 +28,7 @@ interface BeforeAfterCardProps {
 }
 
 const BeforeAfterGallery = () => {
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
 
@@ -105,6 +107,7 @@ const BeforeAfterGallery = () => {
   };
 
   return (
+    <>
     <div className="py-5 sm:py-16 md:py-6 lg:py-6 xl:py-8  bg-gradient-to-br from-yellow-50 to-yellow-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section Heading */}
@@ -208,8 +211,8 @@ const BeforeAfterGallery = () => {
 
         {/* CTA Section */}
         <div className="flex justify-center mt-3 sm:mt-10 md:mt-12 lg:mt-8">
-          <a
-            href="#"
+          <button
+            onClick={() => setContactPopupOpen(true)}
             className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-2.5 px-5 sm:py-3 sm:px-6 md:py-3.5 md:px-8 lg:py-3 lg:px-10 text-sm sm:text-base md:text-lg lg:text-xl font-bold transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#bc9c24] focus:ring-offset-2"
           >
             <div className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 whitespace-nowrap">
@@ -219,10 +222,16 @@ const BeforeAfterGallery = () => {
 
             {/* Shine Effect */}
             <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
+        <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
+    </>
+
   );
 };
 
@@ -313,6 +322,7 @@ const BeforeAfterCard = ({ transformation, colors }: BeforeAfterCardProps) => {
         </p>
       </div>
     </div>
+
   );
 };
 

@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import ContactFormPopup from "./contact-form";
 
 const PatientStories = () => {
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -113,6 +115,7 @@ const PatientStories = () => {
   };
 
   return (
+    <>
     <div className="py-6 md:py-10 lg:py-10 bg-gradient-to-br from-yellow-50 to-yellow-100">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Heading */}
@@ -321,9 +324,9 @@ const PatientStories = () => {
 
         {/* CTA Section */}
         <div className="flex justify-center mt-7">
-          <a
-            href="#"
-            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-7 max-sm:px-6 text-md md:text-lg font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
+          <button
+          onClick={() => setContactPopupOpen(true)}
+            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-7 max-sm:px-3 text-sm md:text-lg font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
           >
             <div className="relative z-10 flex items-center justify-center gap-3">
               Get An Expert Advice For Your Hair
@@ -332,10 +335,15 @@ const PatientStories = () => {
 
             {/* a Shine Effect */}
             <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
+    <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
+    </>
   );
 };
 

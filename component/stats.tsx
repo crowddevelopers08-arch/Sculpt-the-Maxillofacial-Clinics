@@ -1,8 +1,11 @@
 "use client";
 
 import { Star, Award, Users, Shield, Medal, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import ContactFormPopup from "./contact-form";
 
 const StatsSection = () => {
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   const stats = [
     {
       icon: <Star size={24} className="sm:size-6 md:size-8" />,
@@ -37,6 +40,7 @@ const StatsSection = () => {
   ];
 
   return (
+    <>
     <div className="relative py-8 sm:py-10 md:py-12 lg:py-8 xl:py-8 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-12 -right-12 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] xl:w-[350px] xl:h-[350px] 2xl:w-[400px] 2xl:h-[400px] rounded-full bg-gradient-radial from-[#bc9c2410] to-transparent animate-pulse-slow" />
@@ -93,8 +97,8 @@ const StatsSection = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center mb-4 sm:mb-5 md:mb-5">
-          <a
-            href="#"
+          <button
+            onClick={() => setContactPopupOpen(true)}
             className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-6 sm:py-3 sm:px-8 md:py-3 md:px-10 lg:py-3 lg:px-12 text-sm sm:text-base md:text-lg lg:text-lg font-bold transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
           >
             <div className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
@@ -104,7 +108,7 @@ const StatsSection = () => {
 
             {/* Shine Effect */}
             <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-          </a>
+          </button>
         </div>
 
         {/* Bottom Stats */}
@@ -219,6 +223,11 @@ const StatsSection = () => {
         }
       `}</style>
     </div>
+    <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
+    </>
   );
 };
 

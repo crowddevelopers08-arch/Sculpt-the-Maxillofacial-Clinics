@@ -28,3 +28,9 @@ body {
  :root {
   --font-outfit: 'Outfit', sans-serif;
 }
+@media (max-width: 323px) {
+  .margui{
+  padding-left: 12px;
+  padding-right: 12px;
+  }
+}

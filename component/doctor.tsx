@@ -2,10 +2,12 @@
 
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import ContactFormPopup from "./contact-form";
 
 const MeetDrPriyankaRaj = () => {
   const [expanded, setExpanded] = useState(false);
   const [expandeds, setExpandeds] = useState(false);
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   // Using the same color scheme from previous components
   const colors = {
     primary: "#bc9c24",
@@ -18,6 +20,7 @@ const MeetDrPriyankaRaj = () => {
   };
 
   return (
+    <>
     <div id="doctors" className="py-8 md:py-12 lg:py-10">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Main Heading */}
@@ -290,8 +293,9 @@ const MeetDrPriyankaRaj = () => {
         {/* CTA Section */}
         <div className="flex justify-center mt-9 max-sm:mt-4">
           
-           <a href="#"
-            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-7 text-lg font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
+           <button
+           onClick={() => setContactPopupOpen(true)}
+            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-7 md:text-lg text-md font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
           >
             <div className="relative z-10 flex items-center justify-center gap-3">
               Consult with Dr Priyanka
@@ -300,10 +304,15 @@ const MeetDrPriyankaRaj = () => {
 
             {/* a Shine Effect */}
             <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
+    <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
+    </>
   );
 };
 

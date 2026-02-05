@@ -316,7 +316,7 @@ const ServicesWeProvide = () => {
         </div>
 
         {/* Mobile Carousel */}
-        <div className="block lg:hidden mb-8 relative px-12 max-sm:px-6 max-sm:mb-3">
+        <div className="block lg:hidden mb-8 relative px-12 max-sm:px-4 max-sm:mb-3">
           <div className="overflow-hidden rounded-2xl">
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -370,7 +370,7 @@ const ServicesWeProvide = () => {
             style={{ borderColor: colors.primary, color: colors.primaryDark }}
             aria-label="Previous slide"
           >
-            <ChevronLeft size={24} strokeWidth={3} />
+            <ChevronLeft size={14} strokeWidth={3} />
           </button>
           <button
             onClick={nextSlide}
@@ -378,7 +378,7 @@ const ServicesWeProvide = () => {
             style={{ borderColor: colors.primary, color: colors.primaryDark }}
             aria-label="Next slide"
           >
-            <ChevronRight size={24} strokeWidth={3} />
+            <ChevronRight size={14} strokeWidth={3} />
           </button>
 
           {/* Dots Indicator for Mobile */}

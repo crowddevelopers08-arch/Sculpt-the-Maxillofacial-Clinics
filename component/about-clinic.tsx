@@ -2,8 +2,10 @@
 
 import { ArrowRight, Target } from "lucide-react";
 import { useState } from "react";
+import ContactFormPopup from "./contact-form";
 
 const WhoAreWeSection = () => {
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   // Using the same color scheme from the previous StatsSection component
   const colors = {
     primary: "#bc9c24",
@@ -16,6 +18,7 @@ const WhoAreWeSection = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
+    <>
     <div id="about" className="py-8 sm:py-12 md:py-16 lg:py-14 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Mobile: WHO ARE WE? Label and Heading at top */}
@@ -173,7 +176,8 @@ const WhoAreWeSection = () => {
             </div>
             <div className="flex justify-center lg:justify-center">
               
-              <a  href="#"
+              <button
+              onClick={() => setContactPopupOpen(true)}
                 className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-2.5 px-5 sm:py-3 sm:px-6 md:py-3 md:px-7 text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#bc9c24] focus:ring-offset-2"
               >
                 <div className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 whitespace-nowrap">
@@ -183,12 +187,17 @@ const WhoAreWeSection = () => {
 
                 {/* Shine Effect */}
                 <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-700 group-hover:left-full" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
+</>
   );
 };
 
