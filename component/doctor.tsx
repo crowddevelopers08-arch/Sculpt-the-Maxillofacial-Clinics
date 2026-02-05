@@ -70,7 +70,7 @@ const MeetDrPriyankaRaj = () => {
             {/* First Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="CLINIC-pic5.jpg"
+                src="CLINIC-pic5.JPG"
                 alt="Team Collaboration"
                 className="w-full h-64 md:h-72 object-cover"
               />
@@ -230,7 +230,7 @@ const MeetDrPriyankaRaj = () => {
             {/* Bottom Image */}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=500&fit=crop"
+                src="CLINIC-pic5.JPG"
                 alt="Modern Office Space"
                 className="w-full h-64 md:h-72 lg:h-80 object-cover"
               />
