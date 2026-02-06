@@ -143,7 +143,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
         </div>
 
         {/* FAQ Grid - 2 Columns on Desktop, 1 on Mobile */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-5">
           {/* Show first 5 on mobile unless showAll is true, all on desktop */}
           {(typeof window !== "undefined" && window.innerWidth >= 1024
             ? faqs
@@ -215,7 +215,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
 
         {/* Read More/Less Button - Only on Mobile */}
         {faqs.length > 5 && (
-          <div className="flex justify-center mt-6 lg:hidden">
+          <div className="flex justify-center mt-2 md:mt-6 lg:hidden">
             <button
               onClick={() => setShowAll(!showAll)}
               className="text-base font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 rounded px-4 py-2"
@@ -230,7 +230,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
         )}
 
         {/* Bottom CTA Section */}
-        <div className="mt-6 md:mt-8 text-center">
+        <div className="mt-2 md:mt-8 text-center">
             <div className="flex justify-center">
               <button
               onClick={() => setContactPopupOpen(true)}

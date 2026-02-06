@@ -24,7 +24,7 @@ const WhoAreWeSection = () => {
           <div className="lg:hidden mb-4">
             <div className="mb-2">
               <h3
-                className="text-xs sm:text-sm font-extrabold tracking-wider uppercase"
+                className="text-xl sm:text-sm font-extrabold tracking-wider uppercase"
                 style={{ color: colors.primaryDark }}
               >
                 WHO ARE WE?
