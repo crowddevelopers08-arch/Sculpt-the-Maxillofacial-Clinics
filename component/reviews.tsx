@@ -111,7 +111,7 @@ const testimonials = [
   }
 
   return (
-    <div className="w-full flex items-center justify-center py-8 px-4" 
+    <div className="w-full flex items-center justify-center max-sm:py-2 py-8 px-4" 
       style={{ 
         position: 'relative',
         overflow: 'hidden'
@@ -148,7 +148,7 @@ const testimonials = [
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-                <div className="text-center mb-8 md:mb-8">
+                <div className="text-center mb-4 md:mb-8">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 inline-block relative">
              Read Patient Stories{" "}
             <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
@@ -172,7 +172,7 @@ const testimonials = [
           </div>
         </div>
         {/* Testimonial Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:mb-4 mb-12">
           {visibleTestimonials.map((testimonial, index) => (
             <div
               key={`${testimonial.id}-${index}`}
@@ -242,28 +242,23 @@ const testimonials = [
 
               {/* User Info */}
               <div className="flex items-center gap-4">
-                {/* Avatar */}
+                {/* Profile Circle with Person's Initials */}
                 <div 
-                  className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden"
-                  style={{ backgroundColor: testimonial.avatarBg }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                  style={{ 
+                    backgroundColor: testimonial.avatarBg === "bg-amber-400" ? "#FBBF24" : 
+                                   testimonial.avatarBg === "bg-purple-400" ? "#A78BFA" : 
+                                   testimonial.avatarBg === "bg-pink-400" ? "#F472B6" : 
+                                   testimonial.avatarBg === "bg-blue-400" ? "#60A5FA" : "#FBBF24"
+                  }}
                 >
-                  {testimonial.avatar ? (
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-white font-bold text-xl">
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  )}
+                  {testimonial.name.split(' ').map(n => n[0]).join('')}
                 </div>
 
                 {/* Name and Role */}
                 <div>
                   <h4 
-                    className="font-bold text-base"
+                    className="font-bold text-lg"
                     style={{ color: colors.text }}
                   >
                     {testimonial.name}

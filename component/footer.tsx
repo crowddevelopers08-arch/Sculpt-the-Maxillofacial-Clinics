@@ -38,22 +38,19 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12 md:py-10 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="container mx-auto px-4 py-5 md:py-10 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-12">
           {/* Column 1: About & Map */}
           <div className="lg:col-span-1">
-            <h3
-              className="text-2xl md:text-3xl font-extrabold mb-4"
-              style={{
-                background: `linear-gradient(135deg, ${colors.primary}, ${colors.primaryDark})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Sculpt Clinic
-            </h3>
-            <p className="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">
+            <div className="mb-4 flex justify-center md:justify-start">
+              <img
+                src="/treatment/logo1.png"
+                alt="Sculpt Clinic"
+                className="h-20 md:h-22 w-auto object-contain"
+              />
+            </div>
+
+            <p className="text-gray-300 text-sm md:text-base mb-0 md:mb-5 leading-relaxed">
               Your trusted partner in hair restoration and maxillofacial
               surgery. Expert care with proven results.
             </p>
@@ -62,7 +59,7 @@ const Footer = () => {
           {/* Column 2: Quick Links */}
           <div>
             <h4
-              className="text-lg md:text-xl font-bold mb-4"
+              className="text-lg md:text-xl font-bold max-sm:mb-2 mb-4"
               style={{ color: colors.primary }}
             >
               Quick Links
@@ -72,7 +69,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 text-sm md:text-base flex items-center gap-2 group"
+                    className="text-gray-300 hover:text-white transition-colors duration-300 text-sm md:text-base flex items-center gap-2 max-sn:gap-1 group"
                   >
                     <span
                       className="w-0 h-0.5 group-hover:w-4 transition-all duration-300"

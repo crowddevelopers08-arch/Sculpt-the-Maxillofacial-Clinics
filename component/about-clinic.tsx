@@ -48,7 +48,7 @@ const WhoAreWeSection = () => {
                   <div className="relative h-[250px] sm:h-[300px] md:h-[500px] rounded-lg md:rounded-xl overflow-hidden shadow-xl">
                     <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300">
                       <img
-                        src="/CLINIC-pic4.JPG"
+                        src="/treatment/CLINIC-pic5.JPG"
                         alt="Conference Room"
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -75,7 +75,7 @@ const WhoAreWeSection = () => {
                   <div className="relative flex-1 rounded-lg md:rounded-xl overflow-hidden shadow-xl">
                     <div className="w-full h-[115px] sm:h-[140px] md:h-[240px] bg-gradient-to-br from-gray-200 to-gray-300">
                       <img
-                        src="CLINIC-pic2.JPG"
+                        src="/CLINIC-pic2.JPG"
                         alt="Team Collaboration"
                         className="w-full h-full object-cover"
                         loading="lazy"

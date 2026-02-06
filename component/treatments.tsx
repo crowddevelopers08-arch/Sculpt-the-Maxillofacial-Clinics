@@ -22,7 +22,8 @@ const ServicesWeProvide = () => {
   const services = [
     {
       id: 1,
-      icon: "/treatment/img1.avif",
+
+            icon: "/img3.jpg",
       title: "Advanced FUE (Follicular Unit Extraction)",
       description:
         "A minimally invasive, stitch-less technique for a quick recovery and zero linear scarring.",
@@ -38,7 +39,7 @@ const ServicesWeProvide = () => {
     },
     {
       id: 3,
-      icon: "/img3.jpg",
+      icon: "/treatment/img1.avif",
       title: "Beard & Eyebrow Reconstruction ",
       description:
         "Precision transplants to fill patches and define your facial features.",
