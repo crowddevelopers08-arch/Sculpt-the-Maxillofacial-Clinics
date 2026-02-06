@@ -148,7 +148,7 @@ const WhoAreWeSection = () => {
                     Artificial. We combine state-of-the-art technology including{" "}
                     <span className="font-semibold text-gray-800">
                       our signature Bio-Profiling FUE and GFC therapies with a
-                      patient-centric approach that prioritizes long-term follicle
+                      clients-centric approach that prioritizes long-term follicle
                       health and safety.
                     </span>{" "}
                     From the first consultation to our meticulous post-operative
@@ -173,7 +173,7 @@ const WhoAreWeSection = () => {
               <div className="flex justify-center lg:justify-start">
                 <button
                   onClick={() => setContactPopupOpen(true)}
-                  className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-2.5 px-5 sm:py-3 sm:px-6 md:py-3 md:px-7 text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#bc9c24] focus:ring-offset-2"
+                  className="group relative bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] text-white rounded-full py-2.5 px-5 sm:py-3 sm:px-6 md:py-3 md:px-7 text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-0.5 sm:hover:-translate-y-1 hover:from-[#bc9c24] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#bc9c24] focus:ring-offset-2"
                 >
                   <div className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 md:gap-3 whitespace-nowrap">
                     Schedule Your Hair Consultation

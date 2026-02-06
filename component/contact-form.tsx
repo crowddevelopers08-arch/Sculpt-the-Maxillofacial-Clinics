@@ -89,7 +89,7 @@ const handleSubmit = (
           <div 
             className="px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-5 rounded-t-2xl sm:rounded-t-3xl"
             style={{ 
-              background: `linear-gradient(135deg, ${colors.primary}, ${colors.primaryDark})`
+              background: `linear-gradient(135deg, ${colors.primary}, ${colors.primary})`
             }}
           >
             <div className="flex items-center justify-between">
@@ -144,7 +144,7 @@ const handleSubmit = (
                     color: colors.text
                   }}
                   onFocus={(e) => e.target.style.borderColor = colors.primary}
-                  onBlur={(e) => e.target.style.borderColor = colors.primaryLight}
+                  onBlur={(e) => e.target.style.borderColor = colors.primary}
                   placeholder="Enter your name"
                 />
               </div>
@@ -179,7 +179,7 @@ const handleSubmit = (
                       color: colors.text
                     }}
                     onFocus={(e) => e.target.style.borderColor = colors.primary}
-                    onBlur={(e) => e.target.style.borderColor = colors.primaryLight}
+                    onBlur={(e) => e.target.style.borderColor = colors.primary}
                     placeholder="email@example.com"
                   />
                 </div>
@@ -212,7 +212,7 @@ const handleSubmit = (
                       color: colors.text
                     }}
                     onFocus={(e) => e.target.style.borderColor = colors.primary}
-                    onBlur={(e) => e.target.style.borderColor = colors.primaryLight}
+                    onBlur={(e) => e.target.style.borderColor = colors.primary}
                     placeholder="+91 98765 43210"
                   />
                 </div>
@@ -242,7 +242,7 @@ const handleSubmit = (
                     color: colors.text
                   }}
                   onFocus={(e) => e.target.style.borderColor = colors.primary}
-                  onBlur={(e) => e.target.style.borderColor = colors.primaryLight}
+                  onBlur={(e) => e.target.style.borderColor = colors.primary}
                 >
                   <option value="">Select service</option>
                   {services.map((service) => (
@@ -275,7 +275,7 @@ const handleSubmit = (
                     color: colors.text
                   }}
                   onFocus={(e) => e.target.style.borderColor = colors.primary}
-                  onBlur={(e) => e.target.style.borderColor = colors.primaryLight}
+                  onBlur={(e) => e.target.style.borderColor = colors.primary}
                 />
               </div>
             </div>
@@ -306,7 +306,7 @@ const handleSubmit = (
                     color: colors.text
                   }}
                   onFocus={(e) => e.target.style.borderColor = colors.primary}
-                  onBlur={(e) => e.target.style.borderColor = colors.primaryLight}
+                  onBlur={(e) => e.target.style.borderColor = colors.primary}
                   placeholder="Any specific concerns?"
                 />
               </div>

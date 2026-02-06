@@ -37,7 +37,7 @@ const Navbared = () => {
             {/* ================= DESKTOP CTA ONLY ================= */}
             <div className="px-4 mt-6">
               <a
-                href="tel:+919876543210" // ← change your number here
+                href="tel:+91 9606601166" // ← change your number here
                 onClick={() => setMobileOpen(false)}
                 className="
       w-full
@@ -54,7 +54,7 @@ const Navbared = () => {
                   background: `linear-gradient(45deg, ${colors.primary}, ${colors.dark})`,
                 }}
               >
-                +91 9876543210
+                +91 9606601166
               </a>
             </div>
           </div>

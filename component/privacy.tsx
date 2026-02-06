@@ -93,7 +93,7 @@ const PrivacyPolicy = () => {
             <div className="space-y-4" style={{ color: colors.text }}>
               <p>
                 Dr. Priyanka Raj's Clinic ("we," "our," or "us") is committed to protecting 
-                the privacy and confidentiality of our patients' personal and medical information. 
+                the privacy and confidentiality of our client's personal and medical information. 
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your 
                 information when you visit our clinic or use our services.
               </p>
@@ -297,7 +297,7 @@ const PrivacyPolicy = () => {
             }}
           >
             <h3 className="text-2xl font-bold mb-6" style={{ color: colors.primary }}>
-              Your Rights as a Patient
+              Your Rights as a Client
             </h3>
             
             <div className="space-y-4">

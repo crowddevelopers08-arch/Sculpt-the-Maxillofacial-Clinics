@@ -14,6 +14,7 @@ const MeetDrPriyankaRaj = () => {
     primaryDark: "#8b6c0d",
     primaryLight: "#f4e8c1",
     text: "#333333",
+    texts:"#000000",
     textLight: "#6b7280",
     white: "#ffffff",
     blue: "#2196F3",
@@ -27,7 +28,7 @@ const MeetDrPriyankaRaj = () => {
         <div className="text-center mb-5 md:mb-10">
           <h2 className="font-extrabold text-2xl md:text-4xl lg:text-4xl text-[#333333] mb-1 leading-tight">
             Meet Dr.{" "}
-            <span className="bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
               Priyanka Raj (MDS)
             </span>
           </h2>
@@ -35,28 +36,42 @@ const MeetDrPriyankaRaj = () => {
           <p className="text-md md:text-lg text-[#333333] opacity-80 max-w-3xl mx-auto font-normal">
             Specialist Maxillofacial Surgeon & Hair Restoration Expert
           </p>
-          <div className="flex justify-center">
-            <div className="w-48 mt-4 flex justify-center gap-1">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="h-1 w-1 rounded-full"
+       <div className="flex justify-center">
+            <div className="w-48 mt-0">
+              <svg width="100%" height="20" viewBox="0 0 100 20">
+                <path
+                  d="M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  stroke={colors.primaryDark}
+                  strokeWidth="2"
+                  fill="none"
                   style={{
-                    backgroundColor: colors.primaryDark,
-                    animation: `wave 1.5s ease-in-out infinite`,
-                    animationDelay: `${i * 0.1}s`,
+                    animation: `svgWave 2s ease-in-out infinite`,
                   }}
                 />
-              ))}
+              </svg>
             </div>
             <style jsx>{`
-              @keyframes wave {
+              @keyframes svgWave {
                 0%,
                 100% {
-                  transform: translateY(0px);
+                  d: path(
+                    "M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  );
+                }
+                25% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
                 50% {
-                  transform: translateY(-8px);
+                  d: path(
+                    "M0,10 C10,15 15,5 25,10 S40,15 50,10 S65,5 75,10 S90,15 100,10"
+                  );
+                }
+                75% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
               }
             `}</style>
@@ -68,7 +83,7 @@ const MeetDrPriyankaRaj = () => {
           {/* First Section - Image then Text */}
           <div className="space-y-4">
             {/* First Image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden">
               <img
                 src="CLINIC-pic5.JPG"
                 alt="Team Collaboration"
@@ -107,7 +122,7 @@ const MeetDrPriyankaRaj = () => {
                     surgery gives her a unique advantage in hair restoration, as
                     she deeply understands the underlying facial anatomy,
                     ensuring that every hairline she designs is perfectly
-                    symmetrical and naturally proportioned to the patient's
+                    symmetrical and naturally proportioned to the client's
                     face.
                   </p>
                 </div>
@@ -126,9 +141,9 @@ const MeetDrPriyankaRaj = () => {
           {/* Second Section - Image then Text */}
           <div className="space-y-4">
             {/* Second Image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden ">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=500&fit=crop"
+                src="/treatment/doctor1.avif"
                 alt="Modern Office Space"
                 className="w-full h-64 md:h-72 object-cover"
               />
@@ -155,7 +170,7 @@ const MeetDrPriyankaRaj = () => {
                   workshops as an expert speaker.{" "}
                   <span
                     className="font-bold"
-                    style={{ color: colors.primaryDark }}
+                    style={{ color: colors.text }}
                   >
                     She has successfully performed over 1,000 procedures,
                   </span>{" "}
@@ -211,7 +226,7 @@ const MeetDrPriyankaRaj = () => {
                     surgery gives her a unique advantage in hair restoration, as
                     she deeply understands the underlying facial anatomy,
                     ensuring that every hairline she designs is perfectly
-                    symmetrical and naturally proportioned to the patient's
+                    symmetrical and naturally proportioned to the client's
                     face.
                   </p>
                 </div>
@@ -228,7 +243,7 @@ const MeetDrPriyankaRaj = () => {
             </div>
 
             {/* Bottom Image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden ">
               <img
                 src="CLINIC-pic5.JPG"
                 alt="Modern Office Space"
@@ -240,9 +255,9 @@ const MeetDrPriyankaRaj = () => {
           {/* Right Column */}
           <div className="space-y-5">
             {/* Top Image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden ">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
+                src="/treatment/doctor1.avif"
                 alt="Team Collaboration"
                 className="w-full h-64 md:h-72 lg:h-80 object-cover"
               />
@@ -270,7 +285,7 @@ const MeetDrPriyankaRaj = () => {
                   workshops as an expert speaker.{" "}
                   <span
                     className="font-bold"
-                    style={{ color: colors.primaryDark }}
+                    style={{ color: colors.text }}
                   >
                     She has successfully performed over 1,000 procedures,
                   </span>{" "}
@@ -295,7 +310,7 @@ const MeetDrPriyankaRaj = () => {
           
            <button
            onClick={() => setContactPopupOpen(true)}
-            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-3 px-7 md:text-lg text-md font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
+            className="group relative bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] text-white rounded-full py-3 px-7 md:text-lg text-md font-bold transition-all duration-400 hover:-translate-y-1 hover:from-[#bc9c24] hover:to-[#bc9c24] active:translate-y-0 overflow-hidden"
           >
             <div className="relative z-10 flex items-center justify-center gap-3">
               Consult with Dr Priyanka

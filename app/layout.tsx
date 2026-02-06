@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit , Poppins, Inter } from "next/font/google";
 import "./globals.css";
 // import ClientLoaderWrapper from "@/component/ClientLoaderWrapper";
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+});
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -21,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} antialiased`}
+        className={`${outfit.variable} ${poppins.variable} ${inter.variable}antialiased`}
       >
         {/* <ClientLoaderWrapper> */}
           {children}

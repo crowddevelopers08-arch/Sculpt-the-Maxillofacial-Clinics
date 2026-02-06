@@ -3,13 +3,8 @@
 import {
   MapPin,
   Phone,
-  Mail,
   Clock,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Youtube,
+
 } from "lucide-react";
 
 const Footer = () => {
@@ -28,25 +23,16 @@ const Footer = () => {
     { name: "Home", href: "#" },
     { name: "About Us", href: "#about" },
     { name: "FAQ", href: "#faq" },
-    { name: "Doctor", href: "doctors" },
+    { name: "Doctor", href: "#doctors" },
     { name: "Contact", href: "#" },
   ];
 
   const services = [
-    { name: "Doctor-led care by Dr. Priyanka Raj", href: "#TRIKUT" },
-    { name: "Hairlines crafted with surgical precision", href: "#TRIKUT" },
-    { name: "Virtually painless with advanced anesthesia", href: "#TRIKUT" },
-    { name: "Bio-Profiling FUE for maximum graft survival", href: "#TRIKUT" },
-    { name: "GFC + PRP therapies boost healing and volume", href: "#TRIKUT" },
-    { name: "Transparent pricing with 0% EMI, no hidden costs", href: "#TRIKUT" },
-  ];
-
-  const socialLinks = [
-    { icon: <Facebook size={20} />, href: "#", label: "Facebook" },
-    { icon: <Twitter size={20} />, href: "#", label: "Twitter" },
-    { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
-    { icon: <Youtube size={20} />, href: "#", label: "YouTube" },
+    { name: "Best Hair Transplant Clinic", href: "#TRIKUT" },
+    { name: "Affordable Hair Restoration Surgery", href: "#TRIKUT" },
+    { name: "FUE & FUT Hair Transplant Experts", href: "#TRIKUT" },
+    { name: "Permanent Hair Loss Treatment", href: "#TRIKUT" },
+    { name: "Natural Hair Regrowth Solutions", href: "#TRIKUT" },
   ];
 
   return (
@@ -71,23 +57,6 @@ const Footer = () => {
               Your trusted partner in hair restoration and maxillofacial
               surgery. Expert care with proven results.
             </p>
-
-            {/* Google Map Iframe */}
-            <div
-              className="rounded-xl overflow-hidden shadow-lg border-2"
-              style={{ borderColor: colors.primary }}
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.2239671096524!2d80.24409931482186!3d12.961089990863895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d5f0c5e3c3b%3A0x1c8c8c8c8c8c8c8c!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                width="100%"
-                height="200"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Sculpt Clinic Location"
-              />
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -177,19 +146,6 @@ const Footer = () => {
                   +91 9606601166
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-gray-300 text-sm md:text-base">
-                <Mail
-                  size={20}
-                  className="flex-shrink-0"
-                  style={{ color: colors.primary }}
-                />
-                <a
-                  href="mailto:sculptmaxillo.clinic@gmail.com"
-                  className="hover:text-white transition-colors"
-                >
-                  sculptmaxillo.clinic@gmail.com
-                </a>
-              </li>
               <li className="flex items-start gap-3 text-gray-300 text-sm md:text-base">
                 <Clock
                   size={20}
@@ -205,39 +161,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* Social Media Links */}
-        <div className="mt-6 pt-4 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h5 className="text-lg font-semibold mb-3 md:mb-0">
-                Follow Us On Social Media
-              </h5>
-            </div>
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 border-2"
-                  style={{
-                    borderColor: colors.primary,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = colors.primary;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Bar */}
@@ -249,14 +172,8 @@ const Footer = () => {
               rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Sitemap
               </a>
             </div>
           </div>

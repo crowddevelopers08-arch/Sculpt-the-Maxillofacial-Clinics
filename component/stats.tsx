@@ -1,5 +1,5 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 
 const HealthStats = () => {
   const colors = {
@@ -17,23 +17,23 @@ const HealthStats = () => {
     {
       percentage: "4.9/5 ",
       description: "Ratings",
-      isFilled: false
+      isFilled: false,
     },
     {
       percentage: "7 +",
       description: "Years of Surgical Excellence",
-      isFilled: true
+      isFilled: true,
     },
     {
       percentage: "1,000 +",
       description: " Transformations Completed",
-      isFilled: false
+      isFilled: false,
     },
     {
       percentage: "100%",
       description: "Gold Medalist Expertise (MDS Maxillofacial Surgery)",
-      isFilled: true
-    }
+      isFilled: true,
+    },
   ];
 
   return (
@@ -41,93 +41,148 @@ const HealthStats = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-6 md:mb-12">
-          <h1 
+          <h1
             className="text-xl sm:text-2xl md:text-4xl font-bold mb-2 px-2"
             style={{ color: colors.text }}
           >
-           Numbers That Reflect
-           {" "}
-              <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
-                Sculpt's Expertise
-              </span>
+            Numbers That Reflect{" "}
+            <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
+              Sculpt's Expertise
+            </span>
           </h1>
-          
-          <p 
-            className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4"
-            style={{ color: colors.textLight }}
-          >
-            Excellence in hair treatments is our standard, and our numbers back it up. From clients satisfaction rates to successful treatment outcomes.
-          </p>
-          
+
           <div className="flex justify-center">
-            <div className="w-48 mt-4 flex justify-center gap-1">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="h-1 w-1 rounded-full"
+            <div className="w-48 mt-0">
+              <svg width="100%" height="20" viewBox="0 0 100 20">
+                <path
+                  d="M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  stroke={colors.primaryDark}
+                  strokeWidth="2"
+                  fill="none"
                   style={{
-                    backgroundColor: colors.primaryDark,
-                    animation: `wave 1.5s ease-in-out infinite`,
-                    animationDelay: `${i * 0.1}s`,
+                    animation: `svgWave 2s ease-in-out infinite`,
                   }}
                 />
-              ))}
+              </svg>
             </div>
             <style jsx>{`
-              @keyframes wave {
+              @keyframes svgWave {
                 0%,
                 100% {
-                  transform: translateY(0px);
+                  d: path(
+                    "M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  );
+                }
+                25% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
                 50% {
-                  transform: translateY(-8px);
+                  d: path(
+                    "M0,10 C10,15 15,5 25,10 S40,15 50,10 S65,5 75,10 S90,15 100,10"
+                  );
+                }
+                75% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
               }
             `}</style>
           </div>
         </div>
 
-        {/* Stats Grid - Stack vertically on mobile */}
+        {/* Stats Grid - Simple 2x2 grid for mobile, overlapping for large screens */}
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:gap-0 sm:items-center sm:justify-center group/section cursor-pointer">
+          <div className="grid grid-cols-2 gap-4 max-sm:gap-0 sm:hidden w-full max-w-md mx-auto">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="w-full aspect-square rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out"
+                style={{
+                  backgroundColor: stat.isFilled ? colors.primary : colors.white,
+                  border: `2px solid ${colors.primary}`,
+                }}
+              >
+                <div className="text-center px-4 relative z-10">
+                  <h2
+                    className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 transition-colors duration-300 ${
+                      stat.isFilled
+                        ? "group-hover/section:text-black"
+                        : "group-hover/section:text-white"
+                    }`}
+                    style={{ color: stat.isFilled ? colors.text : colors.text }}
+                  >
+                    {stat.percentage}
+                  </h2>
+                  <p
+                    className={`text-[10px] sm:text-xs leading-tight transition-colors duration-300 ${
+                      stat.isFilled
+                        ? "group-hover/section:text-black"
+                        : "group-hover/section:text-white"
+                    }`}
+                    style={{ color: stat.isFilled ? colors.text : colors.text }}
+                  >
+                    {stat.description}
+                  </p>
+                </div>
+
+                {/* Hover overlay for background color swap */}
+                <div
+                  className={`absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100`}
+                  style={{
+                    backgroundColor: stat.isFilled
+                      ? colors.white
+                      : colors.primary,
+                    border: `3px solid ${colors.primary}`,
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Large screen layout (unchanged) */}
           {stats.map((stat, index) => (
-            <div 
+            <div
               key={index}
-              className="w-40 h-40 sm:w-44 sm:h-44 md:w-55 md:h-55 rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out
-                sm:[&:not(:first-child)]:-ml-8"  // Apply negative margin only on sm screens and above, and not to first child
+              className="hidden sm:flex w-44 h-44 md:w-55 md:h-55 rounded-full flex-col items-center justify-center relative transition-all duration-300 ease-in-out sm:[&:not(:first-child)]:-ml-8"
               style={{
                 backgroundColor: stat.isFilled ? colors.primary : colors.white,
                 border: `2px solid ${colors.primary}`,
-                zIndex: 10 - index, // Ensure proper stacking order
+                zIndex: 10 - index,
               }}
             >
-              <div className="text-center px-4 sm:px-6 relative z-10">
-                <h2 
-                  className={`text-xl sm:text-2xl md:text-4xl font-bold mb-2 sm:mb-3 transition-colors duration-300 ${
-                    stat.isFilled 
-                      ? 'group-hover/section:text-black' 
-                      : 'group-hover/section:text-white'
+              <div className="text-center px-6 relative z-10">
+                <h2
+                  className={`text-2xl md:text-4xl font-bold mb-3 transition-colors duration-300 ${
+                    stat.isFilled
+                      ? "group-hover/section:text-black"
+                      : "group-hover/section:text-white"
                   }`}
                   style={{ color: stat.isFilled ? colors.text : colors.text }}
                 >
                   {stat.percentage}
                 </h2>
-                <p 
-                  className={`text-xs sm:text-sm md:text-md leading-relaxed transition-colors duration-300 ${
-                    stat.isFilled 
-                      ? 'group-hover/section:text-black' 
-                      : 'group-hover/section:text-white'
+                <p
+                  className={`text-sm md:text-md leading-relaxed transition-colors duration-300 ${
+                    stat.isFilled
+                      ? "group-hover/section:text-black"
+                      : "group-hover/section:text-white"
                   }`}
                   style={{ color: stat.isFilled ? colors.text : colors.text }}
                 >
                   {stat.description}
                 </p>
               </div>
-              
+
               {/* Hover overlay for background color swap */}
-              <div 
+              <div
                 className={`absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100`}
                 style={{
-                  backgroundColor: stat.isFilled ? colors.white : colors.primary,
+                  backgroundColor: stat.isFilled
+                    ? colors.white
+                    : colors.primary,
                   border: `3px solid ${colors.primary}`,
                 }}
               />

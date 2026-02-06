@@ -40,31 +40,31 @@ const BeforeAfterSlider = () => {
       id: 1,
       beforeImage: "/before/IMG_1.png",
       afterImage: "/before/IMGS_1.png",
-      name: "Patient 1",
+      name: " 1",
     },
     {
       id: 2,
       beforeImage: "/before/IMG_2.png",
       afterImage: "/before/IMGS_2.JPG",
-      name: "Patient 2",
+      name: " 2",
     },
     {
       id: 3,
       beforeImage: "/before/IMG_3.JPEG",
       afterImage: "/before/IMGS_3.png",
-      name: "Patient 3",
+      name: " 3",
     },
     {
       id: 4,
       beforeImage: "/before/IMG_4.JPG",
       afterImage: "/before/IMGS_4.png",
-      name: "Patient 4",
+      name: " 4",
     },
     {
       id: 5,
       beforeImage: "/before/IMG_5.png",
       afterImage: "/before/IMGS_5.png",
-      name: "Patient 5",
+      name: " 5",
     },
   ];
 
@@ -93,7 +93,7 @@ const BeforeAfterSlider = () => {
 
   return (
     <>
-      <div className="py-6 sm:py-10 md:py-12 lg:py-6 bg-gradient-to-br from-yellow-50 to-yellow-100">
+      <div className="py-6 sm:py-10 md:py-12 lg:py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Heading */}
           <div className="text-center mb-3 sm:mb-8 md:mb-6">
@@ -106,36 +106,43 @@ const BeforeAfterSlider = () => {
                 Real Results
               </span>
             </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
-              style={{ color: colors.textLight }}
-            >
-              We don't believe in artificial looks. Our goal is facial harmony.
-              Browse our gallery of real patient outcomes for Hair Transplants.
-            </p>
             
-          <div className="flex justify-center">
-            <div className="w-48 mt-4 flex justify-center gap-1">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="h-1 w-1 rounded-full"
+       <div className="flex justify-center">
+            <div className="w-48 mt-0">
+              <svg width="100%" height="20" viewBox="0 0 100 20">
+                <path
+                  d="M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  stroke={colors.primaryDark}
+                  strokeWidth="2"
+                  fill="none"
                   style={{
-                    backgroundColor: colors.primaryDark,
-                    animation: `wave 1.5s ease-in-out infinite`,
-                    animationDelay: `${i * 0.1}s`,
+                    animation: `svgWave 2s ease-in-out infinite`,
                   }}
                 />
-              ))}
+              </svg>
             </div>
             <style jsx>{`
-              @keyframes wave {
+              @keyframes svgWave {
                 0%,
                 100% {
-                  transform: translateY(0px);
+                  d: path(
+                    "M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  );
+                }
+                25% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
                 50% {
-                  transform: translateY(-8px);
+                  d: path(
+                    "M0,10 C10,15 15,5 25,10 S40,15 50,10 S65,5 75,10 S90,15 100,10"
+                  );
+                }
+                75% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
               }
             `}</style>
@@ -157,7 +164,7 @@ const BeforeAfterSlider = () => {
           <div className="flex justify-center items-center gap-4 sm:gap-6 mb-6 sm:mb-5">
             <button
               onClick={prevSlide}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{ backgroundColor: colors.primaryDark }}
               aria-label="Previous transformations"
               disabled={currentIndex === 0}
@@ -187,7 +194,7 @@ const BeforeAfterSlider = () => {
 
             <button
               onClick={nextSlide}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{ backgroundColor: colors.primaryDark }}
               aria-label="Next transformations"
               disabled={currentIndex + 2 >= transformations.length}
@@ -200,7 +207,7 @@ const BeforeAfterSlider = () => {
           <div className="flex justify-center">
             <button
               onClick={() => setContactPopupOpen(true)}
-              className="group relative bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d] text-white rounded-full py-2.5 px-6 sm:py-3 sm:px-8 md:py-3.5 md:px-10 text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:from-[#8b6c0d] hover:to-[#bc9c24] shadow-lg hover:shadow-xl"
+              className="group relative bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] text-white rounded-full py-2.5 px-6 sm:py-3 sm:px-8 md:py-3.5 md:px-10 text-sm sm:text-base md:text-lg font-bold transition-all duration-300 hover:-translate-y-1 hover:from-[#bc9c24] hover:to-[#bc9c24] hover:shadow-md"
             >
               <div className="relative z-10 flex items-center justify-center gap-2">
                 Schedule Your Hair Consultation
@@ -223,17 +230,11 @@ const BeforeAfterSlider = () => {
 // UPDATED - Side by side Before/After cards (no slider)
 const TransformationCard = ({ transformation, colors }: { transformation: Transformation; colors: Colors }) => {
   return (
-    <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-xl">
+    <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4">
       
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
         {/* Before Image */}
         <div className="relative rounded-md sm:rounded-lg overflow-hidden bg-gray-100">
-          <div
-            className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 sm:px-3 py-1 sm:py-1.5 font-bold text-white text-xs sm:text-sm shadow-lg rounded z-10"
-            style={{ backgroundColor: colors.navy }}
-          >
-            BEFORE
-          </div>
           <img
             src={transformation.beforeImage}
             alt={`Before - ${transformation.name}`}
@@ -247,12 +248,6 @@ const TransformationCard = ({ transformation, colors }: { transformation: Transf
 
         {/* After Image */}
         <div className="relative rounded-md sm:rounded-lg overflow-hidden bg-gray-100">
-          <div
-            className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 sm:px-3 py-1 sm:py-1.5 font-bold text-white text-xs sm:text-sm shadow-lg rounded z-10"
-            style={{ backgroundColor: colors.navy }}
-          >
-            AFTER
-          </div>
           <img
             src={transformation.afterImage}
             alt={`After - ${transformation.name}`}
@@ -262,16 +257,6 @@ const TransformationCard = ({ transformation, colors }: { transformation: Transf
               e.currentTarget.src = "https://via.placeholder.com/300x400/cccccc/ffffff?text=After+Image";
             }}
           />
-        </div>
-      </div>
-      
-      {/* Image captions */}
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-2">
-        <div className="text-center">
-          <p className="text-xs sm:text-sm font-medium text-gray-600">Before Treatment</p>
-        </div>
-        <div className="text-center">
-          <p className="text-xs sm:text-sm font-medium text-gray-600">After Treatment</p>
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
       id: 4,
       question: "How many days of rest do I need after the surgery?",
       answer:
-        "Most patients return to light desk work within 2–3 days, though we recommend avoiding strenuous exercise for two weeks.",
+        "Most clients return to light desk work within 2–3 days, though we recommend avoiding strenuous exercise for two weeks.",
     },
     {
       id: 5,
@@ -97,31 +97,45 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
             className="text-md md:text-lg max-w-3xl mx-auto"
             style={{ color: colors.textLight }}
           >
-            Questions Patients Commonly Ask About Hair Transplant
+            Questions clients Commonly Ask About Hair Transplant
           </p>
           
-          <div className="flex justify-center">
-            <div className="w-48 mt-4 flex justify-center gap-1">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="h-1 w-1 rounded-full"
+       <div className="flex justify-center">
+            <div className="w-48 mt-0">
+              <svg width="100%" height="20" viewBox="0 0 100 20">
+                <path
+                  d="M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  stroke={colors.primaryDark}
+                  strokeWidth="2"
+                  fill="none"
                   style={{
-                    backgroundColor: colors.primaryDark,
-                    animation: `wave 1.5s ease-in-out infinite`,
-                    animationDelay: `${i * 0.1}s`,
+                    animation: `svgWave 2s ease-in-out infinite`,
                   }}
                 />
-              ))}
+              </svg>
             </div>
             <style jsx>{`
-              @keyframes wave {
+              @keyframes svgWave {
                 0%,
                 100% {
-                  transform: translateY(0px);
+                  d: path(
+                    "M0,10 C10,10 15,10 25,10 S40,10 50,10 S65,10 75,10 S90,10 100,10"
+                  );
+                }
+                25% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
                 50% {
-                  transform: translateY(-8px);
+                  d: path(
+                    "M0,10 C10,15 15,5 25,10 S40,15 50,10 S65,5 75,10 S90,15 100,10"
+                  );
+                }
+                75% {
+                  d: path(
+                    "M0,10 C10,5 15,15 25,10 S40,5 50,10 S65,15 75,10 S90,5 100,10"
+                  );
                 }
               }
             `}</style>
@@ -137,7 +151,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
           ).map((faq, index) => (
             <div
               key={faq.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md"
               style={{
                 border:
                   openIndex === index
@@ -222,7 +236,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
               onClick={() => setContactPopupOpen(true)}
                 className="
                   group relative
-                  bg-gradient-to-r from-[#bc9c24] to-[#8b6c0d]
+                  bg-gradient-to-r from-[#bc9c24] to-[#bc9c24]
                   text-white rounded-full
                   
                   px-5 py-2.5          /* mobile smaller */
@@ -233,7 +247,7 @@ const [openIndex, setOpenIndex] = useState<number | null>(null);
                   
                   transition-all duration-300
                   hover:-translate-y-1
-                  hover:from-[#8b6c0d] hover:to-[#bc9c24]
+                  hover:from-[#bc9c24] hover:to-[#bc9c24]
                   active:translate-y-0
                   overflow-hidden
                 "
