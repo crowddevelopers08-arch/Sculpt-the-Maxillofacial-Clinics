@@ -1,14 +1,14 @@
-import WhoAreWeSection from "@/component/about-clinic";
-import BeforeAfterGallery from "@/component/before-after";
-import ReadyToSimplifyBilling from "@/component/doctor";
-import FrequentlyAskedQuestions from "@/component/faq";
-import Footer from "@/component/footer";
-import HeroSection from "@/component/herosection";
-import Navbar from "@/component/navbar";
-import PatientStories from "@/component/reviews";
-import StatsSection from "@/component/stats";
-import ServicesWeProvide from "@/component/treatments";
-import WhatMakesSculptDifferent from "@/component/tricut-apart";
+import WhoAreWeSection from "@/component/ht-about-clinic";
+import BeforeAfterGallery from "@/component/ht-before-after";
+import ReadyToSimplifyBilling from "@/component/ht-doctor";
+import FrequentlyAskedQuestions from "@/component/ht-faq";
+import Footer from "@/component/ht-footer";
+import HeroSection from "@/component/ht-herosection";
+import Navbar from "@/component/ht-navbar";
+import PatientStories from "@/component/ht-reviews";
+import StatsSection from "@/component/ht-stats";
+import ServicesWeProvide from "@/component/hr-treatments";
+import WhatMakesSculptDifferent from "@/component/ht-tricut-apart";
 import Image from "next/image";
 
 export default function Home() {

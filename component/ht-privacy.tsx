@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
   };
 
   const handleGoHome = () => {
-    router.push("/");
+    router.push("/hair-transparent");
   };
 
   const lastUpdated = "January 1, 2024";

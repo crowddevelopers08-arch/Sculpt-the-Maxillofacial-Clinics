@@ -1,6 +1,6 @@
-import Footers from "@/component/navbar-foot";
-import Navbared from "@/component/navbars";
-import ThankYouPage from "@/component/thank";
+import Footers from "@/component/ht-navbar-foot";
+import Navbared from "@/component/ht-navbars";
+import ThankYouPage from "@/component/ht-thank";
 import React from "react";
 
 const page = () => {

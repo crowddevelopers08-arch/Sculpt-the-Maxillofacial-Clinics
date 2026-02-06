@@ -2,6 +2,7 @@
 
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import ContactFormPopup from "./ht-contact-form";
 
 interface Colors {
   primary: string;
@@ -15,6 +16,8 @@ interface Colors {
 
 const WhyChooseUs = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [contactPopupOpen, setContactPopupOpen] = useState(false);
+
 
   const colors: Colors = {
     primary: "#bc9c24",
@@ -430,6 +433,8 @@ const WhyChooseUs = () => {
 
                 {/* CTA Button */}
                 <button
+                 onClick={() => setContactPopupOpen(true)}
+
                   className="group/btn font-bold px-6 lg:px-8 py-3 lg:py-4 rounded-full transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-2xl hover:scale-105 text-sm lg:text-base"
                   style={{
                     backgroundColor: colors.primary,
@@ -499,6 +504,8 @@ const WhyChooseUs = () => {
 
               {/* CTA Button */}
               <button
+               onClick={() => setContactPopupOpen(true)}
+
                 className="group/btn font-bold px-6 py-3 rounded-full transition-all duration-300 flex items-center gap-3 shadow-lg hover:shadow-2xl hover:scale-105 text-sm"
                 style={{
                   backgroundColor: colors.primary,
@@ -512,6 +519,10 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
+          <ContactFormPopup 
+  isOpen={contactPopupOpen} 
+  onClose={() => setContactPopupOpen(false)} 
+/>
     </section>
   );
 };

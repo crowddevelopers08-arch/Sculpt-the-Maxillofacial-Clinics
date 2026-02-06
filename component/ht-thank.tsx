@@ -17,7 +17,7 @@ const ThankYouPage = () => {
   };
 
   const handleGoHome = () => {
-    router.push("/");
+    router.push("/hair-transparent");
   };
 
   const handleBookAnother = () => {

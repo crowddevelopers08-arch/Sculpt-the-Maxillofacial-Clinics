@@ -1,21 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Menu, X, Calendar } from "lucide-react";
-import ContactFormPopup from "./contact-form";
+import ContactFormPopup from "./ht-contact-form";
 
-const Navbar = () => {
+const Navbared = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [contactPopupOpen, setContactPopupOpen] = useState(false);
 
-  const navItems = [
-    { label: "Home", path: "/" },
-    { label: "Services", path: "/" },
-    { label: "Doctors", path: "/" },
-    { label: "Contact", path: "/" },
-  ];
-    const colors = {
+  const colors = {
     primary: "#bc9c24",
     dark: "#8b6c0d",
     light: "#f4e8c1",
@@ -26,20 +19,23 @@ const Navbar = () => {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <nav className="sticky top-0 z-40 bg-white border-b border-primary-light">
+      <nav
+        className="sticky top-0 z-40 bg-white border-b"
+        style={{ borderColor: colors.light }}
+      >
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between h-18 md:h-24">
+          <div className="flex items-center justify-between h-24">
             {/* Logo */}
-            <Link href="/">
+            <div className="cursor-pointer">
               <img
                 src="/logos.png"
-                alt="Clinic Logo"
-                className="w-30 md:w-48 h-auto object-contain cursor-pointer hover:scale-105 transition"
+                alt="Maxillofacial Clinic"
+                className="w-40 md:w-48 h-auto object-contain transition-transform duration-300 hover:scale-105"
               />
-            </Link>
+            </div>
 
-            {/* ================= DESKTOP NAV ================= */}
-            <div className="px-4 mt-0">
+            {/* ================= DESKTOP CTA ONLY ================= */}
+            <div className="px-4 mt-6">
               <a
                 href="tel:+91 9606601166" // ← change your number here
                 onClick={() => setMobileOpen(false)}
@@ -52,7 +48,7 @@ const Navbar = () => {
       flex items-center justify-center gap-2
       transition-all duration-300
       hover:shadow-lg
-      max-sm:px-4 max-sm:text-sm
+      max-sm:px-4 max-sm:text-md
     "
                 style={{
                   background: `linear-gradient(45deg, ${colors.primary}, ${colors.dark})`,
@@ -64,14 +60,8 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* Popup */}
-      <ContactFormPopup
-        isOpen={contactPopupOpen}
-        onClose={() => setContactPopupOpen(false)}
-      />
     </>
   );
 };
 
-export default Navbar;
+export default Navbared;

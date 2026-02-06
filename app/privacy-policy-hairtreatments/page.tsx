@@ -1,6 +1,6 @@
-import Footers from "@/component/navbar-foot";
-import Navbared from "@/component/navbars";
-import PrivacyPolicy from "@/component/privacy";
+import Footers from "@/component/ht-navbar-foot";
+import Navbared from "@/component/ht-navbars";
+import PrivacyPolicy from "@/component/ht-privacy";
 import React from "react";
 
 const page = () => {
