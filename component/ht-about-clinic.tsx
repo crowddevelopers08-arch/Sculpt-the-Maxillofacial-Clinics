@@ -127,12 +127,12 @@ const WhoAreWeSection = () => {
                     At Sculpt The Maxillofacial Clinic, we believe that hair
                     restoration is where medical science meets the art of facial
                     symmetry. Located in the heart of Bangalore{" "}
-                    <span className="font-semibold text-gray-800">
+                    <span>
                       our clinic is led by Dr. Priyanka Raj, a Gold Medalist and
                       specialized Maxillofacial Surgeon
                     </span>
                     ,{" "}
-                    <span className="font-semibold text-gray-800">
+                    <span>
                       who brings a unique facial-first perspective to every
                       procedure. Unlike general cosmetic centers, we don't just
                       focus on graft counts;
@@ -146,14 +146,14 @@ const WhoAreWeSection = () => {
                   <p>
                     Our mission is built on the philosophy of Natural, Not
                     Artificial. We combine state-of-the-art technology including{" "}
-                    <span className="font-semibold text-gray-800">
+                    <span>
                       our signature Bio-Profiling FUE and GFC therapies with a
                       clients-centric approach that prioritizes long-term follicle
                       health and safety.
                     </span>{" "}
                     From the first consultation to our meticulous post-operative
                     care,{" "}
-                    <span className="font-semibold text-gray-800">
+                    <span>
                       every step is designed to restore more than just your hair;
                     </span>{" "}
                     we aim to restore your confidence and your edge through

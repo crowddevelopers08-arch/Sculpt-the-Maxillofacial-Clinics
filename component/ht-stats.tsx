@@ -30,8 +30,8 @@ const HealthStats = () => {
       isFilled: false,
     },
     {
-      percentage: "100%",
-      description: "Gold Medalist Expertise (MDS Maxillofacial Surgery)",
+      percentage: "0%",
+      description: "Compromise on Safety Standards",
       isFilled: true,
     },
   ];
@@ -95,51 +95,139 @@ const HealthStats = () => {
 
         {/* Stats Grid - Simple 2x2 grid for mobile, overlapping for large screens */}
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:gap-0 sm:items-center sm:justify-center group/section cursor-pointer">
+          {/* Mobile Layout - 2x2 grid */}
           <div className="grid grid-cols-2 gap-4 max-sm:gap-0 sm:hidden w-full max-w-md mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="w-full aspect-square rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out"
-                style={{
-                  backgroundColor: stat.isFilled ? colors.primary : colors.white,
-                  border: `2px solid ${colors.primary}`,
-                }}
-              >
-                <div className="text-center px-4 relative z-10">
-                  <h2
-                    className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 transition-colors duration-300 ${
-                      stat.isFilled
-                        ? "group-hover/section:text-black"
-                        : "group-hover/section:text-white"
-                    }`}
-                    style={{ color: stat.isFilled ? colors.text : colors.text }}
-                  >
-                    {stat.percentage}
-                  </h2>
-                  <p
-                    className={`text-[10px] sm:text-xs leading-tight transition-colors duration-300 ${
-                      stat.isFilled
-                        ? "group-hover/section:text-black"
-                        : "group-hover/section:text-white"
-                    }`}
-                    style={{ color: stat.isFilled ? colors.text : colors.text }}
-                  >
-                    {stat.description}
-                  </p>
-                </div>
-
-                {/* Hover overlay for background color swap */}
-                <div
-                  className={`absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100`}
-                  style={{
-                    backgroundColor: stat.isFilled
-                      ? colors.white
-                      : colors.primary,
-                    border: `3px solid ${colors.primary}`,
-                  }}
-                />
+            {/* Top Left - White */}
+            <div
+              className="w-full aspect-square rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out"
+              style={{
+                backgroundColor: colors.white,
+                border: `2px solid ${colors.primary}`,
+              }}
+            >
+              <div className="text-center px-4 relative z-10">
+                <h2
+                  className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 transition-colors duration-300 group-hover/section:text-white"
+                  style={{ color: colors.text }}
+                >
+                  {stats[0].percentage}
+                </h2>
+                <p
+                  className="text-[10px] sm:text-xs leading-tight transition-colors duration-300 group-hover/section:text-white"
+                  style={{ color: colors.text }}
+                >
+                  {stats[0].description}
+                </p>
               </div>
-            ))}
+
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100"
+                style={{
+                  backgroundColor: colors.primary,
+                  border: `3px solid ${colors.primary}`,
+                }}
+              />
+            </div>
+
+            {/* Top Right - White */}
+            <div
+              className="w-full aspect-square rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out"
+              style={{
+                backgroundColor: colors.primary,
+                border: `2px solid ${colors.primary}`,
+              }}
+            >
+              <div className="text-center px-4 relative z-10">
+                <h2
+                  className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 transition-colors duration-300 group-hover/section:text-white"
+                  style={{ color: colors.white }}
+                >
+                  {stats[1].percentage}
+                </h2>
+                <p
+                  className="text-[10px] sm:text-xs leading-tight transition-colors duration-300 group-hover/section:text-white"
+                  style={{ color: colors.white }}
+                >
+                  {stats[1].description}
+                </p>
+              </div>
+
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100"
+                style={{
+                  backgroundColor: colors.primary,
+                  border: `3px solid ${colors.primary}`,
+                }}
+              />
+            </div>
+
+            {/* Bottom Left - Primary Color (same as top-right should be white, but you said use primary color) */}
+            <div
+              className="w-full aspect-square rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out"
+              style={{
+                backgroundColor: colors.primary,
+                border: `2px solid ${colors.primary}`,
+              }}
+            >
+              <div className="text-center px-4 relative z-10">
+                <h2
+                  className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 transition-colors duration-300 group-hover/section:text-black"
+                  style={{ color: colors.white }}
+                >
+                  {stats[2].percentage}
+                </h2>
+                <p
+                  className="text-[10px] sm:text-xs leading-tight transition-colors duration-300 group-hover/section:text-black"
+                  style={{ color: colors.white }}
+                >
+                  {stats[2].description}
+                </p>
+              </div>
+
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100"
+                style={{
+                  backgroundColor: colors.white,
+                  border: `3px solid ${colors.primary}`,
+                }}
+              />
+            </div>
+
+            {/* Bottom Right - White */}
+            <div
+              className="w-full aspect-square rounded-full flex flex-col items-center justify-center relative transition-all duration-300 ease-in-out"
+              style={{
+                backgroundColor: colors.white,
+                border: `2px solid ${colors.primary}`,
+              }}
+            >
+              <div className="text-center px-4 relative z-10">
+                <h2
+                  className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 transition-colors duration-300 group-hover/section:text-white"
+                  style={{ color: colors.text }}
+                >
+                  {stats[3].percentage}
+                </h2>
+                <p
+                  className="text-[10px] sm:text-xs leading-tight transition-colors duration-300 group-hover/section:text-white"
+                  style={{ color: colors.text }}
+                >
+                  {stats[3].description}
+                </p>
+              </div>
+
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover/section:opacity-100"
+                style={{
+                  backgroundColor: colors.primary,
+                  border: `3px solid ${colors.primary}`,
+                }}
+              />
+            </div>
           </div>
 
           {/* Large screen layout (unchanged) */}

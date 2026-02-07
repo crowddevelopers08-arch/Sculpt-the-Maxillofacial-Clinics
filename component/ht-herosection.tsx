@@ -186,16 +186,16 @@ const badges = [
                 {/* Clean Image */}
                 <div className="relative w-full h-[90%] z-10">
                   <img
-                    src="/Untitled-design.png"
+                    src="/treatment/removepng.png"
                     alt="Happy Patient"
-                    className="w-full h-full object-cover rounded-3xl"
+                    className="w-full h-full object-contain rounded-3xl"
                   />
                 </div>
 
                 {/* Floating Badges on Mobile - Different positions */}
                 {/* Badge 1 - Success Rate */}
                 <div
-                  className="absolute left-4 bottom-[5%] bg-white rounded-xl shadow-xl p-3 z-20 border-2"
+                  className="absolute max-sm:left-[-4] md:left-4 max-sm:bottom-[-0%] md:bottom-[3%] bg-white rounded-xl shadow-xl p-3 z-20 border-2"
                   style={{ borderColor: colors.primaryLight }}
                 >
                   <div className="flex items-center gap-2">
@@ -223,7 +223,7 @@ const badges = [
                 </div>
 
                 {/* Badge 2 - Certified Technology */}
-                <div className="absolute right-4 top-[5%] bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-xl p-3 z-20 border-2 border-green-200">
+                <div className="absolute max-sm:right-[-5] md:right-4 max-sm:top-[-7%] md:top-[5%] bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-xl p-3 z-20 border-2 border-green-200">
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-green-100">
                       <Users className="w-5 h-5 text-green-600" />
@@ -367,9 +367,9 @@ const badges = [
                 {/* Clean Image - No Card Wrapper */}
                 <div className="relative w-full h-[90%] z-10">
                   <img
-                    src="/Untitled-design.png"
+                    src="/treatment/removepng.png"
                     alt="Happy Patient"
-                    className="w-full h-full object-cover rounded-3xl"
+                    className="w-full h-full object-contain rounded-3xl"
                   />
                 </div>
 

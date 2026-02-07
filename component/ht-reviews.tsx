@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star, CheckCircle } from "lucide-react";
-import { yellow } from "@mui/material/colors";
 
 const TestimonialsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,7 +10,7 @@ const TestimonialsCarousel = () => {
     primary: "#bc9c24",
     primarys: "#3d8df7",
     primaryDark: "blue",
-    yellow:"yellow",
+    yellow: "yellow",
     primaryLight: "#f4e8c1",
     text: "#333333",
     textLight: "#6b7280",
@@ -19,13 +18,12 @@ const TestimonialsCarousel = () => {
     orange: "#ff6347",
   };
 
-const testimonials = [
+  const testimonials = [
     {
       id: 1,
       text: "So satisfied with the treatment, got done for hair and happy with the results and great support from the doctor and staff , will definitely suggest the clinic for others about their hair concerns for effective and long lasting results!!",
       name: "Shashwath Girish",
       role: "Mumbai, Maharashtra",
-      avatar: "/avatar1.jpg",
       avatarBg: "bg-amber-400"
     },
     {
@@ -33,7 +31,6 @@ const testimonials = [
       text: "I am taking kenacort injection for hair loss. I can see tremendous improvement in my hair growth. Thanks to sculpt team .I highly recommend sculpt clinic for all the skin and hair problems.",
       name: "Manjula Manjula",
       role: "Delhi, NCR",
-      avatar: "/avatar2.jpg",
       avatarBg: "bg-purple-400"
     },
     {
@@ -41,7 +38,6 @@ const testimonials = [
       text: "I had been struggling with hair loss for years, and it took a toll on my self-confidence and overall well-being. However, thanks to the exceptional team at SCULPT The Maxillofacial Clinic, I now feel like a completely new person.",
       name: "Arun Patel",
       role: "Bangalore, Karnataka",
-      avatar: "/avatar3.jpg",
       avatarBg: "bg-amber-400"
     },
     {
@@ -49,7 +45,6 @@ const testimonials = [
       text: "Priyanka Mam really helped me a lottt.My wife left me that i heardly having hair .From then I am very my depressed. I went almost all places in Bangalore.finally Heard about Priyanka mam and started my treatment.I am very happy with the result.",
       name: "Krishna Kishore",
       role: "Hyderabad, Telangana",
-      avatar: "/avatar4.jpg",
       avatarBg: "bg-pink-400"
     },
     {
@@ -57,7 +52,6 @@ const testimonials = [
       text: "Advanced anesthesia made the procedure completely painless. The doctor-led care ensured I was comfortable throughout. Results started showing in 3 months, and now at 8 months, I have a full head of hair. Incredible experience!.",
       name: "Niharika Gowda",
       role: "Pune, Maharashtra",
-      avatar: "/avatar5.jpg",
       avatarBg: "bg-blue-400"
     }
   ];
@@ -111,48 +105,13 @@ const testimonials = [
   }
 
   return (
-    <div className="w-full flex items-center justify-center max-sm:py-2 py-8 px-4" 
-      style={{ 
-        position: 'relative',
-        overflow: 'hidden'
-      }}
-    >
-      {/* Background Pattern */}
-      <div className="absolute opacity-30">
-        <div 
-          className="absolute top-10 left-10 w-32 h-32 rounded-full blur-3xl"
-          style={{ backgroundColor: `${colors.primary}30` }}
-        ></div>
-        <div 
-          className="absolute top-40 right-20 w-40 h-40 rounded-full blur-3xl"
-          style={{ backgroundColor: `${colors.orange}20` }}
-        ></div>
-        <div 
-          className="absolute bottom-20 left-1/4 w-36 h-36 rounded-full blur-3xl"
-          style={{ backgroundColor: `${colors.primaryLight}40` }}
-        ></div>
-        <div 
-          className="absolute bottom-40 right-1/3 w-32 h-32 rounded-full blur-3xl"
-          style={{ backgroundColor: `${colors.primary}20` }}
-        ></div>
-        
-        {/* Dotted Pattern */}
-        <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill={colors.primaryLight} opacity="0.5"/>
-            </pattern>
-          </defs>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#dots)"/>
-        </svg>
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10 w-full">
-                <div className="text-center mb-4 md:mb-8">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 inline-block relative">
-             Read Patient Stories{" "}
+    <div className="w-full flex items-center justify-center max-sm:py-2 py-8 px-4">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="text-center mb-4 md:mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3">
+            Read Patient Stories{" "}
             <span className="bg-gradient-to-r from-[#bc9c24] to-[#bc9c24] bg-clip-text text-transparent">
-               At Sculpt
+              At Sculpt
             </span>
           </h2>
           <div className="flex justify-center">
@@ -163,30 +122,25 @@ const testimonials = [
                   stroke={colors.primary}
                   strokeWidth="2"
                   fill="none"
-                  style={{
-                    animation: `svgWave 2s ease-in-out infinite`,
-                  }}
                 />
               </svg>
             </div>
           </div>
         </div>
+
         {/* Testimonial Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:mb-4 mb-12">
-          {visibleTestimonials.map((testimonial, index) => (
+          {visibleTestimonials.map((testimonial) => (
             <div
-              key={`${testimonial.id}-${index}`}
-              className="bg-white rounded-3xl p-8 transition-all duration-700 transform hover:-translate-y-1 animate-slide-in"
+              key={testimonial.id}
+              className="bg-white rounded-3xl p-8"
               style={{
-                animationDelay: `${index * 0.1}s`,
                 borderTop: `3px solid ${colors.primary}`
               }}
             >
               {/* Rating Header with Google Icon and Verified Badge */}
               <div className="flex items-center justify-between mb-6">
-                {/* Left Side: Google Icon + Stars */}
                 <div className="flex items-center gap-2">
-                  {/* Google Icon */}
                   <div className="flex-shrink-0">
                     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -196,7 +150,6 @@ const testimonials = [
                     </svg>
                   </div>
                   
-                  {/* 5 Yellow/Gold Stars */}
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
                       <Star
@@ -211,7 +164,6 @@ const testimonials = [
                   </div>
                 </div>
 
-                {/* Right Side: Blue Verified Badge */}
                 <div 
                   className="flex items-center gap-1 px-3 py-1 rounded-full"
                   style={{ backgroundColor: `${colors.primaryLight}50` }}
@@ -242,7 +194,6 @@ const testimonials = [
 
               {/* User Info */}
               <div className="flex items-center gap-4">
-                {/* Profile Circle with Person's Initials */}
                 <div 
                   className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
                   style={{ 
@@ -255,7 +206,6 @@ const testimonials = [
                   {testimonial.name.split(' ').map(n => n[0]).join('')}
                 </div>
 
-                {/* Name and Role */}
                 <div>
                   <h4 
                     className="font-bold text-lg"
@@ -277,25 +227,19 @@ const testimonials = [
 
         {/* Navigation Arrows */}
         <div className="flex items-center justify-center gap-4">
-          {/* Previous Button */}
           <button
             onClick={handlePrev}
-            className="w-14 h-14 rounded-full text-white flex items-center justify-center  transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 rounded-full text-white flex items-center justify-center transition-all duration-300"
             style={{ backgroundColor: colors.primary }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = colors.primaryLight}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colors.primary}
             aria-label="Previous testimonials"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          {/* Next Button */}
           <button
             onClick={handleNext}
-            className="w-14 h-14 rounded-full text-white flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            className="w-14 h-14 rounded-full text-white flex items-center justify-center transition-all duration-300"
             style={{ backgroundColor: colors.primary }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = colors.primaryLight}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colors.primary}
             aria-label="Next testimonials"
           >
             <ChevronRight className="w-6 h-6" />
@@ -314,39 +258,11 @@ const testimonials = [
                 height: '8px',
                 backgroundColor: index === currentIndex ? colors.primary : colors.primaryLight
               }}
-              onMouseEnter={(e) => {
-                if (index !== currentIndex) {
-                  e.currentTarget.style.backgroundColor = colors.primary;
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (index !== currentIndex) {
-                  e.currentTarget.style.backgroundColor = colors.primaryLight;
-                }
-              }}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
       </div>
-
-      {/* Smooth Animation Styles */}
-      <style jsx>{`
-        @keyframes slideIn {
-          0% {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .animate-slide-in {
-          animation: slideIn 0.6s ease-out forwards;
-        }
-      `}</style>
     </div>
   );
 };

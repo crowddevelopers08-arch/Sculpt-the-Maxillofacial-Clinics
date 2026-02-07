@@ -284,8 +284,6 @@ const MeetDrPriyankaRaj = () => {
                   frequently contributing to international conferences and
                   workshops as an expert speaker.{" "}
                   <span
-                    className="font-bold"
-                    style={{ color: colors.text }}
                   >
                     She has successfully performed over 1,000 procedures,
                   </span>{" "}
